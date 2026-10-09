@@ -1267,7 +1267,7 @@ margin-right: 0; }
 <section id="python-setup" class="slide level2">
 <h2>Python setup</h2>
 <p>Every code example in this course assumes this preamble:</p>
-<div id="53dffb24" class="cell" data-execution_count="3">
+<div id="29885447" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -1280,7 +1280,7 @@ margin-right: 0; }
 </section>
 <section id="long-run-frequency-simulated" class="slide level2">
 <h2>Long-run frequency, simulated</h2>
-<div id="93622bc9" class="cell" data-execution_count="4">
+<div id="8651f855" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href aria-hidden="true" tabindex="-1"></a>flips <span class="op">=</span> rng.integers(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span><span class="dv">100_000</span>)   <span class="co"># 1 = heads, 0 = tails</span></span>
 <span id="cb2-2"><a href aria-hidden="true" tabindex="-1"></a>running_freq <span class="op">=</span> np.cumsum(flips) <span class="op">/</span> np.arange(<span class="dv">1</span>, flips.size <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb2-3"><a href aria-hidden="true" tabindex="-1"></a></span>
@@ -1547,7 +1547,7 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B).
 </section>
 <section id="joint-probability-simulated" class="slide level2">
 <h2>Joint probability, simulated</h2>
-<div id="34fc70bd" class="cell" data-execution_count="5">
+<div id="a705b900" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href aria-hidden="true" tabindex="-1"></a>rolls <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">100_000</span>)</span>
 <span id="cb4-2"><a href aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> rolls <span class="op">&gt;=</span> <span class="dv">4</span>          <span class="co"># Boolean value that is True if roll&gt;=4</span></span>
@@ -1619,7 +1619,7 @@ P(\text{heads} \cap \text{roll 3})
 </section>
 <section id="conditioning-simulated" class="slide level2">
 <h2>Conditioning, simulated</h2>
-<div id="6f9a17e9" class="cell" data-execution_count="6">
+<div id="a0642dbc" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;P(A|B) ≈&#39;</span>, A[B].mean())      <span class="co"># restrict to draws where B occurred</span></span>
 <span id="cb6-2"><a href aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;exact  :&#39;</span>, (<span class="dv">2</span><span class="op">/</span><span class="dv">6</span>) <span class="op">/</span> (<span class="dv">3</span><span class="op">/</span><span class="dv">6</span>))    <span class="co"># P(A∩B)/P(B) = 2/3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1700,7 +1700,7 @@ P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}
 </section>
 <section id="the-same-process-simulated" class="slide level2">
 <h2>The same process, simulated</h2>
-<div id="c644ad7e" class="cell" data-execution_count="7">
+<div id="ffe2ee3f" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100_000</span></span>
 <span id="cb8-2"><a href aria-hidden="true" tabindex="-1"></a>heads <span class="op">=</span> rng.random(n) <span class="op">&lt;</span> <span class="fl">0.5</span></span>
 <span id="cb8-3"><a href aria-hidden="true" tabindex="-1"></a>die <span class="op">=</span> np.where(heads,</span>
@@ -1798,7 +1798,7 @@ P(A_j \mid B) = \frac{P(B \mid A_j)\, P(A_j)}{\sum_i P(B \mid A_i)\, P(A_i)}.
 </section>
 <section id="base-rates-matter-the-answer" class="slide level2">
 <h2>Base rates matter: the answer</h2>
-<div id="41085dc0" class="cell" data-execution_count="8">
+<div id="14699b3b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1_000_000</span></span>
 <span id="cb10-2"><a href aria-hidden="true" tabindex="-1"></a>sick <span class="op">=</span> rng.random(n) <span class="op">&lt;</span> <span class="fl">0.01</span></span>
 <span id="cb10-3"><a href aria-hidden="true" tabindex="-1"></a>positive <span class="op">=</span> np.where(sick, rng.random(n) <span class="op">&lt;</span> <span class="fl">0.95</span>, rng.random(n) <span class="op">&lt;</span> <span class="fl">0.05</span>)</span>
@@ -2050,7 +2050,7 @@ display:block!important;
 </section>
 <section id="a-pmf-in-code" class="slide level2">
 <h2>A PMF in code</h2>
-<div id="7fa1cea6" class="cell" data-execution_count="9">
+<div id="f3e74c87" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="1|2|5|1-7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href aria-label="1"></a>X <span class="op">=</span> stats.binom(n<span class="op">=</span><span class="dv">10</span>, p<span class="op">=</span><span class="fl">0.3</span>)    <span class="co"># the r.v.</span></span>
 <span id="cb12-2"><a href aria-label="2"></a>x <span class="op">=</span> np.arange(<span class="dv">11</span>)               <span class="co"># x = [0, 1, 2, ..., 10]</span></span>
 <span id="cb12-3"><a href aria-label="3"></a></span>
@@ -2123,7 +2123,7 @@ F(x) = \Pr[X \leq x], \; \forall x \in \mathbb{R}.
 </section>
 <section id="the-die-roll-cdf" class="slide level2 smaller">
 <h2>The die-roll CDF</h2>
-<div id="37fb4bd5" class="cell" data-execution_count="10">
+<div id="478d0fbe" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="1|2|5|1-7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href aria-label="1"></a>die <span class="op">=</span> stats.randint(<span class="dv">1</span>, <span class="dv">7</span>)         <span class="co"># create the r.v.</span></span>
 <span id="cb13-2"><a href aria-label="2"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">7.5</span>, <span class="dv">500</span>)   <span class="co"># 500 points between -0.5 and 7.5</span></span>
 <span id="cb13-3"><a href aria-label="3"></a></span>
@@ -2476,7 +2476,7 @@ f_{Y \mid X}(y \mid x) = \Pr[Y = y \mid X = x] = \frac{f(x, y)}{f_X(x)},
 </section>
 <section id="simulations" class="slide level2">
 <h2>Simulations</h2>
-<div id="27d6b6c8" class="cell" data-execution_count="11">
+<div id="30758f3e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100_000</span></span>
 <span id="cb14-2"><a href aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> (rng.random(n) <span class="op">&lt;</span> <span class="fl">0.5</span>).astype(<span class="bu">int</span>)             <span class="co"># 1 = tails</span></span>
 <span id="cb14-3"><a href aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.where(X <span class="op">==</span> <span class="dv">0</span>, rng.integers(<span class="dv">1</span>, <span class="dv">5</span>, size<span class="op">=</span>n),</span>
