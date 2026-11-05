@@ -1138,25 +1138,25 @@ display:block!important;
 <section id="random-variables-in-python" class="slide level2">
 <h2>Random variables in python</h2>
 <p>Create random variables using <code>scipy.stats</code>. For example, create Bernoulli r.v. with <span class="math inline">\(p = 0.3\)</span>:</p>
-<div id="825e0bb8" class="cell" data-execution_count="3">
+<div id="396c36e4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> stats.bernoulli(<span class="fl">0.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Consider two calculations:</p>
-<div id="9a128b88" class="cell" data-execution_count="4">
+<div id="ee03a32b" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href aria-hidden="true" tabindex="-1"></a>X.mean(), X.var()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>(0.3, 0.21)</code></pre>
 </div>
 </div>
-<div id="af8cc6e6" class="cell" data-execution_count="5">
+<div id="1e548802" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> X.rvs(size<span class="op">=</span><span class="dv">1000</span>)</span>
 <span id="cb4-2"><a href aria-hidden="true" tabindex="-1"></a>samples.mean(), samples.var()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(0.331, 0.22143899999999997)</code></pre>
+<pre><code>(0.289, 0.20547900000000008)</code></pre>
 </div>
 </div>
 <p>Can also do things like:</p>
-<div id="8eb179ac" class="cell" data-execution_count="6">
+<div id="54ecda12" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href aria-hidden="true" tabindex="-1"></a>X.expect(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> X.expect(<span class="kw">lambda</span> x: x)<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>0.21</code></pre>
@@ -1206,7 +1206,7 @@ display:block!important;
 <section id="simulating-waits" class="slide level2 smaller">
 <h2>Simulating <code>waits</code></h2>
 <p>For <span class="math inline">\(p=0.3\)</span>, each random number below <span class="math inline">\(0.3\)</span> represents a success. Consider three simulated sequences (rows) of four trials (columns):</p>
-<div id="d16a780e" class="cell" data-execution_count="7">
+<div id="04e21a2f" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.3</span></span>
 <span id="cb8-2"><a href aria-hidden="true" tabindex="-1"></a>draws <span class="op">=</span> np.array([[<span class="fl">0.72</span>, <span class="fl">0.11</span>, <span class="fl">0.64</span>, <span class="fl">0.08</span>],</span>
 <span id="cb8-3"><a href aria-hidden="true" tabindex="-1"></a>                  [<span class="fl">0.94</span>, <span class="fl">0.81</span>, <span class="fl">0.46</span>, <span class="fl">0.27</span>],</span>
@@ -1240,7 +1240,7 @@ display:block!important;
 </section>
 <section id="geometric-simulated" class="slide level2">
 <h2>Geometric, simulated</h2>
-<div id="137323fe" class="cell" data-execution_count="8">
+<div id="0df27b49" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.3</span><span class="op">;</span> n <span class="op">=</span> <span class="dv">100_000</span></span>
 <span id="cb10-2"><a href aria-hidden="true" tabindex="-1"></a>waits <span class="op">=</span> np.argmax(rng.random((n, <span class="dv">16</span>)) <span class="op">&lt;</span> p, axis<span class="op">=</span><span class="dv">1</span>) <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb10-3"><a href aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">15</span>)</span>
@@ -1301,7 +1301,7 @@ display:block!important;
 </section>
 <section id="binomial-simulated" class="slide level2">
 <h2>Binomial, simulated</h2>
-<div id="6aff1cbb" class="cell" data-execution_count="9">
+<div id="c02eb748" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href aria-hidden="true" tabindex="-1"></a>n, p <span class="op">=</span> <span class="dv">10</span>, <span class="fl">0.3</span></span>
 <span id="cb11-2"><a href aria-hidden="true" tabindex="-1"></a>draws <span class="op">=</span> (rng.random((<span class="dv">100_000</span>, n)) <span class="op">&lt;</span> p).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb11-3"><a href aria-hidden="true" tabindex="-1"></a></span>
@@ -1400,7 +1400,7 @@ display:block!important;
 </section>
 <section id="the-poisson-limit-1" class="slide level2">
 <h2>The Poisson limit</h2>
-<div id="d9308ed8" class="cell" data-execution_count="10">
+<div id="393d9788" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href aria-hidden="true" tabindex="-1"></a>λ, x <span class="op">=</span> <span class="dv">5</span>, np.arange(<span class="dv">16</span>)</span>
 <span id="cb12-2"><a href aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.2</span>))</span>
@@ -1566,7 +1566,7 @@ f_X(x; \lambda) = \lambda e^{-\lambda x}, \qquad x \in [0, \infty).
 </section>
 <section id="exponential-waiting-times-simulated" class="slide level2">
 <h2>Exponential waiting times, simulated</h2>
-<div id="26e425bc" class="cell" data-execution_count="11">
+<div id="457160d3" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href aria-hidden="true" tabindex="-1"></a>waits <span class="op">=</span> rng.exponential(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.5</span>, size<span class="op">=</span><span class="dv">100_000</span>)   <span class="co"># lambda = 0.5</span></span>
 <span id="cb13-2"><a href aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">200</span>)</span>
@@ -1775,7 +1775,7 @@ Q_X(0.05) = 0.01 + 0.05 \, z_{0.05} = 0.01 - 0.05 \times 1.645 \approx -0.072.
 </section>
 <section id="quantiles-computed" class="slide level2">
 <h2>Quantiles, computed</h2>
-<div id="a5fdff68" class="cell" data-execution_count="12">
+<div id="bfd01d20" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="fl">0.01</span>, <span class="fl">0.05</span></span>
 <span id="cb14-2"><a href aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co"># ppf (&#39;percent point function&#39;) is SciPy&#39;s name for the quantile function</span></span>
@@ -1866,7 +1866,7 @@ m! \sim \sqrt{2\pi m}\left(\frac{m}{e}\right)^m.
 </section>
 <section id="the-limit" class="slide level2 smaller">
 <h2>The limit</h2>
-<div id="d359ec26" class="cell" data-execution_count="13">
+<div id="e7e1b821" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.3</span></span>
 <span id="cb16-2"><a href aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">400</span>)</span>
 <span id="cb16-3"><a href aria-hidden="true" tabindex="-1"></a></span>
@@ -1970,7 +1970,7 @@ x^{\nu/2 - 1} e^{-x/2},
 </section>
 <section id="the-gamma-function" class="slide level2 smaller">
 <h2>The gamma function</h2>
-<div id="ad596245" class="cell" data-execution_count="14">
+<div id="a961b548" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> gamma, factorial</span>
 <span id="cb17-2"><a href aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
@@ -1993,7 +1993,7 @@ x^{\nu/2 - 1} e^{-x/2},
 </section>
 <section id="constructions-verified" class="slide level2">
 <h2>Constructions, verified</h2>
-<div id="8089a3de" class="cell" data-execution_count="15">
+<div id="b1e8bfe1" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> rng.standard_normal((<span class="dv">100_000</span>, <span class="dv">5</span>))</span>
 <span id="cb18-2"><a href aria-hidden="true" tabindex="-1"></a>chi2_sim <span class="op">=</span> (Z <span class="op">**</span> <span class="dv">2</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)                  <span class="co"># chi-square, 5 df</span></span>
 <span id="cb18-3"><a href aria-hidden="true" tabindex="-1"></a></span>
